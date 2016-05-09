@@ -1,0 +1,23 @@
+{
+    "name": "neelkanthk/TodoPackage",
+    "description": "An example using LaraPackBoiler.",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Neelkanth Kaushik",
+            "email": "neelkanth.kaushik@daffodilsw.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "illuminate/support": "~5"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TodoPackage\\application\\": "src/"
+        }
+    }
+}
