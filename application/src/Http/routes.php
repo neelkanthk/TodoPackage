@@ -20,13 +20,13 @@ Route::get('packagename/middlewaretest', ['middleware' => 'packagename_auth', 'u
   This will check for the "packagename_tablename" in the database and run the migration if it is not present.
 
  */
-Route::get('packagename/install', ['as' => 'packagename_installation', 'uses' => 'Package\Application\Http\Controllers\PackageController@install']);
+Route::get('todopackage/install', ['as' => 'todopackage_installation', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoPackageController@install']);
 
-Route::get('packagename', ['as' => 'packagename_root', function() {
-        if (!Schema::hasTable('packageboilerplate_table')) {
-            return redirect()->route('packagename_installation');
+Route::get('todopackage', ['as' => 'todopackage_root', function() {
+        if (!Schema::hasTable('todos')) {
+            return redirect()->route('todopackage_installation');
         } else {
-            return redirect()->route('packagename_index');
+            return redirect()->route('todopackage_index');
         }
     }]);
 

@@ -7,12 +7,12 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\database\seeds;
+namespace TodoPackage\Application\database\seeds;
 
 use Illuminate\Database\Seeder;
 use \DB;
 
-class PackageTableSeeder extends Seeder {
+class TodoTableSeeder extends Seeder {
 
     /**
      * Run the database seeds.
@@ -21,15 +21,15 @@ class PackageTableSeeder extends Seeder {
      */
     public function run() {
         //
-        DB::table('packageboilerplate_table')->insert([
+        DB::table('todos')->insert([
             [
-                'name' => 'Create'
+                'name' => 'Create Task'
             ], [
-                'name' => 'Delete'
+                'name' => 'Delete Task'
             ], [
-                'name' => 'Update'
+                'name' => 'Update Task'
             ], [
-                'name' => 'View'
+                'name' => 'View Task'
             ]
         ]);
     }

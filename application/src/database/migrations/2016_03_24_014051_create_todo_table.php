@@ -10,7 +10,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePackageTable extends Migration {
+class CreateTodoTable extends Migration {
 
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreatePackageTable extends Migration {
      * @return void
      */
     public function up() {
-        Schema::create('packageboilerplate_table', function (Blueprint $table) {
+        Schema::create('todos', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 100)->unique();
@@ -32,7 +32,7 @@ class CreatePackageTable extends Migration {
      * @return void
      */
     public function down() {
-        Schema::drop('packageboilerplate_table');
+        Schema::drop('todos');
     }
 
 }

@@ -75,13 +75,13 @@ class TodoPackageController extends Controller {
      * @version 1.0.0
      */
     public function install() {
-        \Illuminate\Support\Facades\Artisan::call('migrate', array('--path' => '/vendor/laravel_packageboilerplate/application/src/database/migrations/'));
-        echo "<h2>Package Tables Created Succesfully.</h2>";
+        \Illuminate\Support\Facades\Artisan::call('migrate', array('--path' => '/vendor/TodoPackage/application/src/database/migrations/'));
+        echo "<h2>Todo Package Tables Created Succesfully.</h2>";
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'Package\Application\database\seeds\PackageTableSeeder'
+            '--class' => 'TodoPackage\Application\database\seeds\TodoTableSeeder'
         ]);
         echo "<br/>";
-        echo "<h2>Package Tables Seeded Successfully.</h2>";
+        echo "<h2>Todo Package Tables Seeded Successfully.</h2>";
     }
 
 }
