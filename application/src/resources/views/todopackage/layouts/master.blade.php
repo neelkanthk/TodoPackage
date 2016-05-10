@@ -13,10 +13,10 @@
         <title>@yield('title')</title>
 
         <!-- Bootstrap Core CSS -->
-        <link href="{{ asset('/vendor/packagename/css/bootstrap.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('/vendor/todopackage/css/bootstrap.min.css') }}" rel="stylesheet">
 
         <!--Custom Package specific Styles and Scripts-->
-        <link href="{{ asset('/vendor/packagename/css/packagename-styles.css') }}" rel="stylesheet">
+        <link href="{{ asset('/vendor/todopackage/css/todopackage-styles.css') }}" rel="stylesheet">
 
     </head>
 
@@ -25,12 +25,12 @@
             <!--Header and Navigation Sidebar-->
             <!-- Navigation -->
             <nav class="navbar navbar-fixed-top" role="navigation">
-                @include('packagename::includes.header')
+                @include('todopackage::includes.header')
             </nav>
             <div id="page-wrapper">
                 @yield('content')
             </div>
-            @include('packagename::includes.footer')
+            @include('todopackage::includes.footer')
         </div>
     </body>
 </html>

@@ -1,4 +1,4 @@
-@extends('packagename::layouts.master')
+@extends('todopackage::layouts.master')
 
 @section('title')
 {{ 'Dashboard' }}
