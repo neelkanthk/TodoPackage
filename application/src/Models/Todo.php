@@ -1,12 +1,12 @@
 <?php
 
-namespace Package\Application\Models;
+namespace TodoPackage\Application\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PackageModel extends Model {
+class Todo extends Model {
 
-    protected $table = 'packageboilerplate_table';
+    protected $table = 'todopackage_todo';
 
     /**
      * The attributes that are mass assignable.

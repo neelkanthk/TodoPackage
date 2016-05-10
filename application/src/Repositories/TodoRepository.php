@@ -8,12 +8,12 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\Repositories;
+namespace TodoPackage\Application\Repositories;
 
-use Package\Application\Interfaces\PackageInterface;
-use Package\Application\Models\PackageModel;
+use TodoPackage\Application\Interfaces\TodoPackageInterface;
+use TodoPackage\Application\Models\Todo;
 
-class PackageRepository implements PackageInterface {
+class TodoRepository implements TodoInterface {
 
     public function getArray() {
         $list = array(
@@ -24,7 +24,7 @@ class PackageRepository implements PackageInterface {
     }
 
     public function fetchFromDb() {
-        return PackageModel::all();
+        return Todo::all();
     }
 
 }

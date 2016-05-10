@@ -8,9 +8,9 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\Interfaces;
+namespace TodoPackage\Application\Interfaces;
 
-interface PackageInterface {
+interface TodoInterface {
 
     public function getArray();
 
