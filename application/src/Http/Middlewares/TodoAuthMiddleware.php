@@ -29,8 +29,7 @@ class TodoAuthMiddleware {
             if ($request->ajax()) {
                 return response('Unauthorized Ajax Access.', 401);
             } else {
-
-                return response('Unauthorized Access.', 401);
+                return redirect('todo/index');
             }
         }
 

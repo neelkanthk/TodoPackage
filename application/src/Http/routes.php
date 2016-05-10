@@ -9,9 +9,9 @@
 // Example routes
 Route::get('todopackage/test', 'TodoPackage\Application\Http\Controllers\TodoController@testAction');
 Route::get('packagename/dbtest', 'Package\Application\Http\Controllers\PackageController@databaseAccess');
-Route::get('packagename/viewtest', 'Package\Application\Http\Controllers\PackageController@index');
+Route::get('todopackage/viewtest', 'TodoPackage\Application\Http\Controllers\TodoController@index');
 Route::get('packagename/eventtest', 'Package\Application\Http\Controllers\PackageController@eventAction');
-Route::get('packagename/middlewaretest', ['middleware' => 'packagename_auth', 'uses' => 'Package\Application\Http\Controllers\PackageController@restrictedAccess']);
+Route::get('todopackage/middlewaretest', ['middleware' => 'todopackage_auth', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@restrictedAccess']);
 /*
   First run and installations route
   This route is optional and completely customizable.
@@ -31,3 +31,15 @@ Route::get('todopackage', ['as' => 'todopackage_root', function() {
     }]);
 
 /* First run and installations */
+
+/*
+ * TodoPackage Routes
+ */
+
+Route::get('todo/index', 'TodoPackage\Application\Http\Controllers\TodoController@index');
+
+Route::group(['middleware' => 'todopackage_auth'], function () {
+    Route::get('todo/home', [
+        'as' => 'todo_home', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@index'
+    ]);
+});
