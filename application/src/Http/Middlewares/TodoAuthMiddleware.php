@@ -8,12 +8,12 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\Http\Middlewares;
+namespace TodoPackage\Application\Http\Middlewares;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
-class PackageAuthMiddleware {
+class TodoAuthMiddleware {
 
     /**
      * Handle an incoming request.

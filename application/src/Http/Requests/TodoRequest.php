@@ -7,11 +7,11 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\Http\Requests;
+namespace TodoPackage\Application\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class PackageRequest extends Request {
+class TodoRequest extends Request {
 
     /**
      * Determine if the user is authorized to make this request.
