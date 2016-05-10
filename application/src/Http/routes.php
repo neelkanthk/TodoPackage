@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 // Example routes
-Route::get('todopackage/test', 'TodoPackage\Application\Http\Controllers\TodoPackageController@testAction');
+Route::get('todopackage/test', 'TodoPackage\Application\Http\Controllers\TodoController@testAction');
 Route::get('packagename/dbtest', 'Package\Application\Http\Controllers\PackageController@databaseAccess');
 Route::get('packagename/viewtest', 'Package\Application\Http\Controllers\PackageController@index');
 Route::get('packagename/eventtest', 'Package\Application\Http\Controllers\PackageController@eventAction');
@@ -20,7 +20,7 @@ Route::get('packagename/middlewaretest', ['middleware' => 'packagename_auth', 'u
   This will check for the "packagename_tablename" in the database and run the migration if it is not present.
 
  */
-Route::get('todopackage/install', ['as' => 'todopackage_installation', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoPackageController@install']);
+Route::get('todopackage/install', ['as' => 'todopackage_installation', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@install']);
 
 Route::get('todopackage', ['as' => 'todopackage_root', function() {
         if (!Schema::hasTable('todos')) {

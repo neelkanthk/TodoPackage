@@ -15,7 +15,7 @@ use Package\Application\Interfaces\PackageInterface;
 use Event;
 use Package\Application\Events\PackageEvent;
 
-class TodoPackageController extends Controller {
+class TodoController extends Controller {
 
     protected $data;
 
