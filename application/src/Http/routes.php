@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 // Example routes
-Route::get('packagename/test', 'Package\Application\Http\Controllers\PackageController@exampleAction');
+Route::get('todopackage/test', 'TodoPackage\Application\Http\Controllers\TodoPackageController@testAction');
 Route::get('packagename/dbtest', 'Package\Application\Http\Controllers\PackageController@databaseAccess');
 Route::get('packagename/viewtest', 'Package\Application\Http\Controllers\PackageController@index');
 Route::get('packagename/eventtest', 'Package\Application\Http\Controllers\PackageController@eventAction');

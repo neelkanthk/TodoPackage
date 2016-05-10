@@ -8,14 +8,14 @@
  * @since 1.0.0
  */
 
-namespace Package\Application\Http\Controllers;
+namespace TodoPackage\Application\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Package\Application\Interfaces\PackageInterface;
 use Event;
 use Package\Application\Events\PackageEvent;
 
-class PackageController extends Controller {
+class TodoPackageController extends Controller {
 
     protected $data;
 
@@ -43,8 +43,8 @@ class PackageController extends Controller {
      * @since 1.0.0
      * @return string
      */
-    public function exampleAction() {
-        return "Hi I am PackageController@exampleAction";
+    public function testAction() {
+        return "Hi I am TodoPackageController@testAction";
     }
 
     /**
