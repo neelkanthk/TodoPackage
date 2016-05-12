@@ -47,6 +47,6 @@ Route::post('todo/login', [
 ]);
 Route::group(['middleware' => 'todopackage_auth'], function () {
     Route::get('todo/dashboard', [
-        'as' => 'todo_dashboard', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@dashboard'
+        'as' => 'todo_dashboard', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@dashboard'
     ]);
 });

@@ -14,14 +14,20 @@ class TodoAuthController extends Controller {
 
     public function postLogin(TodoRequest $request) {
         $credentials = $request->only('email', 'password');
-        //dd($credentials);
+
         try {
             if (Auth::attempt($credentials)) {
-                dd('hello');
+                return redirect()->route('todo_dashboard');
+            } else {
+                
             }
         } catch (Exception $ex) {
             
         }
+    }
+
+    public function dashboard() {
+        
     }
 
 }

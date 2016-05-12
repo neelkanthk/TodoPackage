@@ -29,7 +29,7 @@ class TodoRequest extends Request {
      */
     public function rules() {
         return [
-            'email' => 'required|email|unique:users,email',
+            'email' => 'required|email',
             'password' => 'required|max:255|min:4'
         ];
     }
