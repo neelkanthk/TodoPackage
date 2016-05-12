@@ -7,7 +7,9 @@
 @section('content')
 <div class="container-fluid">
     <div class="alert alert-info">
-        Home Page
+        <span class="">Home Page</span>
+        
     </div>
+    <a href="{{ url('/todo/login') }}">Login</a>
 </div>
 @endsection

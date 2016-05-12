@@ -9,13 +9,13 @@
     <div class="col-md-6 col-md-offset-3">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3 class="panel-title">Login</h3>
+                <h3 class="panel-title">Todo: Login</h3>
             </div>
             <div class="panel-body">
 
                 <!-- Display Validation Errors -->
 
-                <form class="form-horizontal" role="form" method="POST" action="{{ url('') }}">
+                <form class="form-horizontal" role="form" method="POST" action="{{ url('/todo/login') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 

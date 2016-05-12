@@ -37,6 +37,8 @@ class TodoController extends Controller {
         return view('todopackage::pages.home');
     }
 
+    
+
     /**
      * A simple action to return string
      * @author Neelkanth Kaushik
@@ -62,7 +64,7 @@ class TodoController extends Controller {
     public function eventAction() {
         Event::fire(new PackageEvent());
     }
-    
+
     public function restrictedAccess() {
         return "Access granted";
     }

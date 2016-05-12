@@ -38,8 +38,15 @@ Route::get('todopackage', ['as' => 'todopackage_root', function() {
 
 Route::get('todo/index', 'TodoPackage\Application\Http\Controllers\TodoController@index');
 
+Route::get('todo/login', [
+    'as' => 'todo_login', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogin'
+]);
+
+Route::post('todo/login', [
+    'as' => 'todo_auth', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@postLogin'
+]);
 Route::group(['middleware' => 'todopackage_auth'], function () {
-    Route::get('todo/home', [
-        'as' => 'todo_home', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@index'
+    Route::get('todo/dashboard', [
+        'as' => 'todo_dashboard', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@dashboard'
     ]);
 });
