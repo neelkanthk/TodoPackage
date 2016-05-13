@@ -19,15 +19,20 @@ class TodoAuthController extends Controller {
             if (Auth::attempt($credentials)) {
                 return redirect()->route('todo_dashboard');
             } else {
-                
+                return redirec()->route('todo_login');
             }
         } catch (Exception $ex) {
-            
+            return redirect()->route('todo_login');
         }
     }
 
+    public function getLogout() {
+        Auth::logout();
+        return redirect()->route('todo_login');
+    }
+
     public function dashboard() {
-        
+        return view('todopackage::pages.dashboard');
     }
 
 }

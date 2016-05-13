@@ -42,6 +42,10 @@ Route::get('todo/login', [
     'as' => 'todo_login', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogin'
 ]);
 
+Route::get('todo/logout', [
+    'as' => 'todo_logout', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogout'
+]);
+
 Route::post('todo/login', [
     'as' => 'todo_auth', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@postLogin'
 ]);
