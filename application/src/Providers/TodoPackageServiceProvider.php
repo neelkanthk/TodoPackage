@@ -16,7 +16,7 @@ class TodoPackageServiceProvider extends ServiceProvider {
 
     public function register() {
         $this->app->bind(
-                'TodoPackage\Application\Interfaces\TodoPackageInterface', 'TodoPackage\Application\Repositories\TodoPackageRepository'
+                'TodoPackage\Application\Interfaces\TodoInterface', 'TodoPackage\Application\Repositories\TodoRepository'
         );
     }
 

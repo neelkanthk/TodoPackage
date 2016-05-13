@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Todo extends Model {
 
-    protected $table = 'todopackage_todo';
+    protected $table = 'todos';
 
     /**
      * The attributes that are mass assignable.

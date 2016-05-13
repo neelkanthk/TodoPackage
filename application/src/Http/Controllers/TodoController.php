@@ -11,17 +11,19 @@
 namespace TodoPackage\Application\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Package\Application\Interfaces\PackageInterface;
+use TodoPackage\Application\Http\Requests\TodoRequest;
+use TodoPackage\Application\Interfaces\TodoInterface;
 use Event;
 use Package\Application\Events\PackageEvent;
+use TodoPackage\Application\Http\Requests\TaskRequest;
 
 class TodoController extends Controller {
 
-    protected $data;
+    protected $todo;
 
     //Get the repository using Dependency Injection
-    public function __construct(PackageInterface $object) {
-        $this->data = $object;
+    public function __construct(TodoInterface $object) {
+        $this->todo = $object;
     }
 
     /**
@@ -37,7 +39,15 @@ class TodoController extends Controller {
         return view('todopackage::pages.home');
     }
 
-    
+    public function addTask(TaskRequest $request) {
+        $task = $request->all();
+        $status = $this->todo->addTask($task);
+        if ($status == true) {
+            
+        } else {
+            
+        }
+    }
 
     /**
      * A simple action to return string

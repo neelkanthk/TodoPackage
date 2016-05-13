@@ -12,7 +12,6 @@ namespace TodoPackage\Application\Interfaces;
 
 interface TodoInterface {
 
-    public function getArray();
-
-    public function fetchFromDb();
+    public function getTasks();
+    public function addTask($task);
 }

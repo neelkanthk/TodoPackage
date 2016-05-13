@@ -10,21 +10,24 @@
 
 namespace TodoPackage\Application\Repositories;
 
-use TodoPackage\Application\Interfaces\TodoPackageInterface;
+use TodoPackage\Application\Interfaces\TodoInterface;
 use TodoPackage\Application\Models\Todo;
 
 class TodoRepository implements TodoInterface {
 
-    public function getArray() {
-        $list = array(
-            '1' => 'John',
-            '2' => 'Rambo'
-        );
-        return $list;
+    public function getTasks() {
+        
     }
 
-    public function fetchFromDb() {
-        return Todo::all();
+    public function addTask($task) {
+
+        try {
+            $newTask = new Todo;
+            $newTask->name = $task['name'];
+            return $newTask->save();
+        } catch (Exception $ex) {
+            
+        }
     }
 
 }

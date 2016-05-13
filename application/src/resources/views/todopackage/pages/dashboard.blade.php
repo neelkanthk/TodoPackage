@@ -25,7 +25,6 @@
             <label for="task" class="col-sm-3 control-label">Task Name</label>
             <div class="col-sm-6">                
                 <input type="text" name="name" id="task-name" class="form-control">
-
             </div>
 
         </div>
