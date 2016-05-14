@@ -10,6 +10,7 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title">TodoPackage: Login</h3>
+
             </div>
             <div class="panel-body">
 
@@ -57,9 +58,15 @@
                             <button type="submit" class="btn btn-primary">Login</button>
                         </div>
                     </div>
+
                 </form>
+
             </div>
         </div>
+        <div style="text-align: center;">
+            <a href="{{ url('todo/index') }}">Back to home</a>
+        </div>
+
     </div>
 </div>
 @endsection

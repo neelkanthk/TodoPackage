@@ -1,3 +1,31 @@
 /*
 Put package CSS here.
 */
+.content #title{
+    font-size: 32px;
+    text-align: center;
+    text-decoration: underline;
+}
+.content #description{
+    font-size: 32px;
+    text-align: center;
+}
+.content #repo-link{
+    font-size: 32px;
+    margin-left: 40%;
+}
+.content #actions{
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+#call-to-action{
+    text-align: center;
+    ont-size: 24px;
+}
+#package-repo{
+    float:left;
+}
+#blog-link{
+    float:right;
+}
