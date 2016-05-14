@@ -33,4 +33,10 @@ class TaskRequest extends Request {
         ];
     }
 
+    public function messages() {
+        return [
+            'name.required' => 'Er, you forgot your task name !',
+        ];
+    }
+
 }

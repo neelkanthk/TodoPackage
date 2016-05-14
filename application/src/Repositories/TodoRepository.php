@@ -16,7 +16,12 @@ use TodoPackage\Application\Models\Todo;
 class TodoRepository implements TodoInterface {
 
     public function getTasks() {
-        
+        try {
+            $data = Todo::paginate(5);
+        } catch (Exception $ex) {
+            
+        }
+        return $data;
     }
 
     public function addTask($task) {
@@ -28,6 +33,15 @@ class TodoRepository implements TodoInterface {
         } catch (Exception $ex) {
             
         }
+    }
+
+    public function deletetask($id) {
+        try {
+            $status = Todo::destroy($id);
+        } catch (Exception $ex) {
+            
+        }
+        return $status;
     }
 
 }

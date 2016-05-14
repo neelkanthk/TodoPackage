@@ -7,16 +7,18 @@
 @section('content')
 <div class="container-fluid">
     <div class="alert alert-info">
-        <span class="">Dashboard</span>
-        <a href="">Logout</a>
+        <span class="">Welcome, {{$user->email}}</span>
+        
     </div>
+    <a href="{{ url('todo/logout') }}">Logout</a>
+    <h2><u>Todo Manager</u></h2>
 
-    <h2>Add Tasks</h2>
+    @include('todopackage::shared.errors')
 
-    <!-- Display Validation Errors -->
-    @include('common.errors')
+    @include('todopackage::shared.flash')
 
     <!-- New Category Form -->
+    <div style="border-color: #000; border-width: 2px; border-style: solid; margin-bottom: 10px;"></div>
     <form action="{{ url('todo/task') }}" method="POST" class="form-horizontal">
         {{ csrf_field() }}
 
@@ -39,7 +41,8 @@
         </div>
 
     </form>
-    <h2>Tasks</h2>
+    <div style="border-color: #000; border-width: 2px; border-style: solid"></div>
+    <h2>All Tasks</h2>
     <table class="table table-striped task-table">
         <thead>
             <tr>
@@ -55,7 +58,7 @@
                 <?php //dd($task); ?>
 
                 <td table-text>
-                    <a href="{{ url('admin/category') }}/{{ $task->id }}">{{ $task->name }}</a> <br>
+                    <a href="{{ url('todo/task') }}/{{ $task->id }}">{{ $task->name }}</a> <br>
                 </td>      
 
                 <td table-text>{{ $task->created_at }}</td>
@@ -74,6 +77,7 @@
 
 
             @endforeach
+            {!! $tasks->render() !!}
             @endif
         </tbody>
     </table>

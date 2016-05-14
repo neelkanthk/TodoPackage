@@ -13,5 +13,8 @@ namespace TodoPackage\Application\Interfaces;
 interface TodoInterface {
 
     public function getTasks();
+
     public function addTask($task);
+
+    public function deletetask($id);
 }

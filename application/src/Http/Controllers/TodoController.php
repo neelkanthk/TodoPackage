@@ -16,6 +16,9 @@ use TodoPackage\Application\Interfaces\TodoInterface;
 use Event;
 use Package\Application\Events\PackageEvent;
 use TodoPackage\Application\Http\Requests\TaskRequest;
+use Illuminate\Support\Facades\Session;
+use App\Http\Requests\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TodoController extends Controller {
 
@@ -39,14 +42,43 @@ class TodoController extends Controller {
         return view('todopackage::pages.home');
     }
 
+    public function dashboard() {
+        $taskList = $this->todo->getTasks();
+        $user = Auth::user();
+
+        return view('todopackage::pages.dashboard')->withTasks($taskList)->withUser($user);
+    }
+
+    /**
+     * Adding a new task in Todos
+     * @param TaskRequest $request
+     * @return type
+     */
     public function addTask(TaskRequest $request) {
         $task = $request->all();
         $status = $this->todo->addTask($task);
         if ($status == true) {
-            
+            $request->session()->flash('todopackage_session_flash', 'A new task has been added.');
+            $request->session()->flash('todopackage_session_flash_class', 'success');
         } else {
-            
+            $request->session()->flash('todopackage_session_flash', 'Try again.');
+            $request->session()->flash('todopackage_session_flash_class', 'danger');
         }
+
+        return redirect()->route('todo_dashboard');
+    }
+
+    public function deleteTask($id) {
+        $status = $this->todo->deletetask($id);
+        if ($status == true) {
+            Session::flash('todopackage_session_flash', 'The task has been deleted successfully.');
+            Session::flash('todopackage_session_flash_class', 'success');
+        } else {
+            Session::flash('todopackage_session_flash', 'Try again.');
+            Session::flash('todopackage_session_flash_class', 'danger');
+        }
+
+        return redirect()->route('todo_dashboard');
     }
 
     /**
