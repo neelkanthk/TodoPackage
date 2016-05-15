@@ -1,8 +1,7 @@
 <?php
 
 /**
- * An example Authentication Middleware for the package.
- * Feel free to add more middlewares to your package
+ * Authentication Middleware for the package.
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
