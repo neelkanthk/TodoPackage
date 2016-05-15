@@ -1,7 +1,7 @@
 <?php
 
 /**
- * An example Seeder class for the package tables.
+ * Database Seeder class for the todos table.
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
