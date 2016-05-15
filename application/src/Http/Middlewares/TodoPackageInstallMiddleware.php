@@ -7,7 +7,7 @@ use Closure;
 class TodoPackageInstallMiddleware {
 
     /**
-     * Rum package migration if the 'todos' table is not created
+     * Run package migration if the 'todos' table is not created
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
@@ -15,7 +15,9 @@ class TodoPackageInstallMiddleware {
      */
     public function handle($request, Closure $next) {
 
+        //check if table exists
         if (!\Illuminate\Support\Facades\Schema::hasTable('todos')) {
+            //run migration
             \Illuminate\Support\Facades\Artisan::call('migrate', array('--path' => '/vendor/TodoPackage/application/src/database/migrations/'));
             echo "<h2>Todo Package Tables Created Succesfully.</h2>";
             \Illuminate\Support\Facades\Artisan::call('db:seed', [
