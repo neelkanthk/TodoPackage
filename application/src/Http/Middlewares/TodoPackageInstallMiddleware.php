@@ -19,14 +19,14 @@ class TodoPackageInstallMiddleware {
         if (!\Illuminate\Support\Facades\Schema::hasTable('todos')) {
             //run migration
             \Illuminate\Support\Facades\Artisan::call('migrate', array('--path' => '/vendor/TodoPackage/application/src/database/migrations/'));
-            echo "<h2>Todo Package Tables Created Succesfully.</h2>";
+            //echo "<h2>Todo Package Tables Created Succesfully.</h2>";
             \Illuminate\Support\Facades\Artisan::call('db:seed', [
                 '--class' => 'TodoPackage\Application\database\seeds\TodoTableSeeder'
             ]);
-            echo "<br/>";
-            echo "<h2>Todo Package Tables Seeded Successfully.</h2>";
-            
-            echo "<a href='".url('todo/index')."'>Visit package home page</a>";
+//            echo "<br/>";
+//            echo "<h2>Todo Package Tables Seeded Successfully.</h2>";
+//            echo "<a href='".url('todo/index')."'>Visit package home page</a>";
+            return view('todopackage::pages.home')->withInstall(true);
         } else {
             return $next($request);
         }
