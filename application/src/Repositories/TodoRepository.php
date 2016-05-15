@@ -1,8 +1,7 @@
 <?php
 
 /**
- * An example Repository for the package.
- * Feel free to create more repositories.
+ * Database Repository for the package.
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
@@ -15,6 +14,10 @@ use TodoPackage\Application\Models\Todo;
 
 class TodoRepository implements TodoInterface {
 
+    /**
+     * Get the list of all tasks with pagination
+     * @return type
+     */
     public function getTasks() {
         try {
             $data = Todo::paginate(5);
@@ -24,6 +27,11 @@ class TodoRepository implements TodoInterface {
         return $data;
     }
 
+    /**
+     * Add new task
+     * @param type $task
+     * @return type
+     */
     public function addTask($task) {
 
         try {
@@ -35,6 +43,11 @@ class TodoRepository implements TodoInterface {
         }
     }
 
+    /**
+     * Remove a task
+     * @param type $id
+     * @return type
+     */
     public function deletetask($id) {
         try {
             $status = Todo::destroy($id);
