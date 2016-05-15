@@ -1,8 +1,7 @@
 <?php
 
 /**
- * An example migration file for package.
- * Feel free to create more migrations
+ * Migration file for todos table
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
