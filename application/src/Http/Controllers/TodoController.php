@@ -2,7 +2,6 @@
 
 /**
  * A basic package controller.
- * Feel free to add more controllers to your package
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
@@ -37,15 +36,14 @@ class TodoController extends Controller {
      * 
      */
     public function index() {
-        //packagename_namespace should be same as the 
-        //one defined in the PackageServiceProvider's $this->loadViewsFrom()
         return view('todopackage::pages.home');
     }
 
     public function dashboard() {
+        //get the list of tasks
         $taskList = $this->todo->getTasks();
+        //get current user
         $user = Auth::user();
-
         return view('todopackage::pages.dashboard')->withTasks($taskList)->withUser($user);
     }
 
@@ -68,6 +66,11 @@ class TodoController extends Controller {
         return redirect()->route('todo_dashboard');
     }
 
+    /**
+     * Removing a task from todos
+     * @param type $id
+     * @return type
+     */
     public function deleteTask($id) {
         $status = $this->todo->deletetask($id);
         if ($status == true) {
@@ -77,7 +80,6 @@ class TodoController extends Controller {
             Session::flash('todopackage_session_flash', 'Try again.');
             Session::flash('todopackage_session_flash_class', 'danger');
         }
-
         return redirect()->route('todo_dashboard');
     }
 
@@ -113,7 +115,6 @@ class TodoController extends Controller {
 
     /**
      * A basic installation action defined for setting up database tables
-     * for your package
      * 
      * @author Neelkanth Kaushik
      * @version 1.0.0
