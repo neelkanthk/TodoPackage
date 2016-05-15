@@ -1,9 +1,7 @@
 <?php
 
 /**
- * An example Service Provider for the package.
- * Feel free to add more service providers as per your requirement.
- * 
+ * Service Provider for the package.
  * @author Neelkanth Kaushik
  * @since 1.0.0
  */
