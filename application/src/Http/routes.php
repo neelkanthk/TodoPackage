@@ -48,7 +48,6 @@ Route::get('todo/login', [
 ]);
 
 Route::get('todo/logout', [
-    'middleware' => 'todopackage_install',
     'as' => 'todo_logout',
     'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogout'
 ]);
