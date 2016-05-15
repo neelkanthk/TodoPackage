@@ -21,8 +21,8 @@
         </div>
 
         <div id="call-to-action">
-            <a id="package-repo" href="https://github.com/neelkanthk/">See more</a>
-            <a id="blog-link" href="https://cheerfulcoder.wordpress.com/">Cheerful Coder</a>
+            <a id="package-repo" href="https://github.com/neelkanthk/">Github</a>
+            <a id="blog-link" href="https://cheerfulcoder.wordpress.com/">Explore more @ Cheerful Coder</a>
         </div>
 
     </div>

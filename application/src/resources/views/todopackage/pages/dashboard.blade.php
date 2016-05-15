@@ -58,7 +58,7 @@
                 <?php //dd($task); ?>
 
                 <td table-text>
-                    <a href="{{ url('todo/task') }}/{{ $task->id }}">{{ $task->name }}</a> <br>
+                    <a href="">{{ $task->name }}</a> <br>
                 </td>      
 
                 <td table-text>{{ $task->created_at }}</td>

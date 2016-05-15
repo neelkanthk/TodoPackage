@@ -11,6 +11,7 @@ namespace TodoPackage\Application\database\seeds;
 
 use Illuminate\Database\Seeder;
 use \DB;
+use Carbon\Carbon;
 
 class TodoTableSeeder extends Seeder {
 
@@ -23,13 +24,17 @@ class TodoTableSeeder extends Seeder {
         //
         DB::table('todos')->insert([
             [
-                'name' => 'Create Task'
+                'name' => 'Create Task',
+                'created_at' => Carbon::now(),
             ], [
-                'name' => 'Delete Task'
+                'name' => 'Delete Task',
+                'created_at' => Carbon::now(),
             ], [
-                'name' => 'Update Task'
+                'name' => 'Update Task',
+                'created_at' => Carbon::now(),
             ], [
-                'name' => 'View Task'
+                'name' => 'View Task',
+                'created_at' => Carbon::now(),
             ]
         ]);
     }

@@ -5,6 +5,7 @@ namespace TodoPackage\Application\Http\Controllers;
 use App\Http\Controllers\Controller;
 use TodoPackage\Application\Http\Requests\TodoRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class TodoAuthController extends Controller {
 
@@ -19,7 +20,9 @@ class TodoAuthController extends Controller {
             if (Auth::attempt($credentials)) {
                 return redirect()->route('todo_dashboard');
             } else {
-                return redirec()->route('todo_login');
+                $request->session()->flash('todopackage_session_flash', 'Invalid credentials.');
+                $request->session()->flash('todopackage_session_flash_class', 'danger');
+                return redirect()->route('todo_login');
             }
         } catch (Exception $ex) {
             return redirect()->route('todo_login');
@@ -28,6 +31,8 @@ class TodoAuthController extends Controller {
 
     public function getLogout() {
         Auth::logout();
+        Session::flash('todopackage_session_flash', 'Logged out.');
+        Session::flash('todopackage_session_flash_class', 'success');
         return redirect()->route('todo_login');
     }
 

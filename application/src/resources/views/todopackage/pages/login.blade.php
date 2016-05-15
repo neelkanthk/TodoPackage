@@ -20,9 +20,9 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
 
-                    @if (session()->has('flash_message'))
-                    <div class="alert alert-success">
-                        {{ session()->get('flash_message') }}
+                    @if (session()->has('todopackage_session_flash'))
+                    <div class="alert alert-{{ session()->get('todopackage_session_flash_class') }}">
+                        {{ session()->get('todopackage_session_flash') }}
                     </div>
                     @endif
 
