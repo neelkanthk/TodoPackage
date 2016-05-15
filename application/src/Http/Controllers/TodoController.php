@@ -84,36 +84,6 @@ class TodoController extends Controller {
     }
 
     /**
-     * A simple action to return string
-     * @author Neelkanth Kaushik
-     * @since 1.0.0
-     * @return string
-     */
-    public function testAction() {
-        return "Hi I am TodoPackageController@testAction";
-    }
-
-    /**
-     * A simple action to get the data from database
-     * 
-     * @author Neelkanth Kaushik
-     * @since 1.0.0 
-     */
-    public function databaseAccess() {
-        //Fetch the data using the repository function
-        $data = $this->data->fetchFromDb();
-        return $data;
-    }
-
-    public function eventAction() {
-        Event::fire(new PackageEvent());
-    }
-
-    public function restrictedAccess() {
-        return "Access granted";
-    }
-
-    /**
      * A basic installation action defined for setting up database tables
      * 
      * @author Neelkanth Kaushik
