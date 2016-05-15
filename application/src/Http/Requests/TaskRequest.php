@@ -1,7 +1,7 @@
 <?php
 
 /**
- * An example Custom Request class for the package.
+ * An Custom Request class for the validating adding new tasks
  * 
  * @author Neelkanth Kaushik
  * @since 1.0.0
