@@ -8,4 +8,5 @@
  */
 return [
     'packagename' => '',
+    'view_namespace' => 'todopackage'
 ];

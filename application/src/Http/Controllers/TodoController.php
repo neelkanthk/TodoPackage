@@ -119,13 +119,7 @@ class TodoController extends Controller {
      * @version 1.0.0
      */
     public function install() {
-        \Illuminate\Support\Facades\Artisan::call('migrate', array('--path' => '/vendor/TodoPackage/application/src/database/migrations/'));
-        echo "<h2>Todo Package Tables Created Succesfully.</h2>";
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'TodoPackage\Application\database\seeds\TodoTableSeeder'
-        ]);
-        echo "<br/>";
-        echo "<h2>Todo Package Tables Seeded Successfully.</h2>";
+        return redirect('todo/index');
     }
 
 }

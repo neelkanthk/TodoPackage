@@ -42,6 +42,7 @@ class TodoPackageServiceProvider extends ServiceProvider {
         //Adding the custom middleware to the application's IoC container
         $this->app['router'];
         $this->app['router']->middleware('todopackage_auth', 'TodoPackage\Application\Http\Middlewares\TodoAuthMiddleware');
+        $this->app['router']->middleware('todopackage_install', 'TodoPackage\Application\Http\Middlewares\TodoPackageInstallMiddleware');
     }
 
 }

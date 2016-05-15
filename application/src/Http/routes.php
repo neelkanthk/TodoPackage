@@ -20,14 +20,14 @@ Route::get('todopackage/middlewaretest', ['middleware' => 'todopackage_auth', 'u
   This will check for the "packagename_tablename" in the database and run the migration if it is not present.
 
  */
-Route::get('todopackage/install', ['as' => 'todopackage_installation', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@install']);
+Route::get('todo/install', [
+    'middleware' => 'todopackage_install',
+    'as' => 'todopackage_installation',
+    'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@install']);
 
-Route::get('todopackage', ['as' => 'todopackage_root', function() {
-        if (!Schema::hasTable('todos')) {
-            return redirect()->route('todopackage_installation');
-        } else {
-            return redirect()->route('todopackage_index');
-        }
+Route::get('todo', ['middleware' => 'todopackage_install',
+    'as' => 'todopackage_root', function() {
+        return redirect('todo/index');
     }]);
 
 /* First run and installations */
@@ -36,14 +36,21 @@ Route::get('todopackage', ['as' => 'todopackage_root', function() {
  * TodoPackage Routes
  */
 
-Route::get('todo/index', 'TodoPackage\Application\Http\Controllers\TodoController@index');
+Route::get('todo/index', [
+    'middleware' => 'todopackage_install',
+    'uses' => 'TodoPackage\Application\Http\Controllers\TodoController@index'
+]);
 
 Route::get('todo/login', [
-    'as' => 'todo_login', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogin'
+    'middleware' => 'todopackage_install',
+    'as' => 'todo_login',
+    'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogin'
 ]);
 
 Route::get('todo/logout', [
-    'as' => 'todo_logout', 'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogout'
+    'middleware' => 'todopackage_install',
+    'as' => 'todo_logout',
+    'uses' => 'TodoPackage\Application\Http\Controllers\TodoAuthController@getLogout'
 ]);
 
 Route::post('todo/login', [
